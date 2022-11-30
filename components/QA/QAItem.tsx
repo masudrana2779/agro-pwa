@@ -29,7 +29,7 @@ const QAItemComponent = ({
           />
         </div>
         <div className="">
-          <div className="text-lg text-white font-medium"> {title}</div>
+          <div className="text-lg text-white font-medium">{title}</div>
         </div>
       </Link>
     </>
