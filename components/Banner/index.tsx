@@ -12,7 +12,7 @@ const BannerComponent = () => {
     centerMode: true,
     centerPadding: "40px",
     autoplay: true,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 5000,
   };
   return (
     <>
