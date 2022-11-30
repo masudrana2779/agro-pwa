@@ -6,11 +6,11 @@ import QAComponent from "../QA";
 const HomeComponent = () => {
   return (
     <>
-      <div className="max-w-lg mx-auto">
+      <div className="max-w-lg mx-auto pb-3">
         <BannerComponent />
         <CallChat />
         <FarmingTipsComponent />
-        <QAComponent /> 
+        <QAComponent />
       </div>
     </>
   );
