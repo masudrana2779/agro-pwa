@@ -6,10 +6,12 @@ import QAComponent from "../QA";
 const HomeComponent = () => {
   return (
     <>
-      <BannerComponent />
-      <CallChat />
-      <FarmingTipsComponent />
-      <QAComponent />
+      <div className="max-w-sm mx-auto">
+        <BannerComponent />
+        <CallChat />
+        <FarmingTipsComponent />
+        <QAComponent />
+      </div>
     </>
   );
 };
