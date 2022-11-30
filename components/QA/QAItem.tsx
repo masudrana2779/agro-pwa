@@ -18,7 +18,7 @@ const QAItemComponent = ({
         href={url}
         className={`${bgGradient} p-4 rounded-2xl`}
       >
-        <div className="ml-auto w-20 h-20 mb-5 flex items-center justify-start">
+        <div className="ml-auto w-32 h-32 mb-1 flex items-center justify-start">
           <Image
             src={imageUrl}
             width={110}
