@@ -21,8 +21,8 @@ const QAItemComponent = ({
         <div className="ml-auto w-20 h-20 mb-5 flex items-center justify-start">
           <Image
             src={imageUrl}
-            width={126}
-            height={169}
+            width={110}
+            height={110}
             alt="fish"
             placeholder="blur"
             blurDataURL={imageUrl}
