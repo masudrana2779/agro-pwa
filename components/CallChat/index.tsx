@@ -15,7 +15,7 @@ const CallChat = () => {
             iconColor={"text-white"}
             titleColor={"text-white"}
             paragraphColor={"text-white"}
-          />
+          /> 
           <CallChatItem
             bgColor="bg-white"
             titleColor="text-green-700"
