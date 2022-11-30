@@ -10,7 +10,7 @@ const HomeComponent = () => {
         <BannerComponent />
         <CallChat />
         <FarmingTipsComponent />
-        <QAComponent />
+        <QAComponent /> 
       </div>
     </>
   );
