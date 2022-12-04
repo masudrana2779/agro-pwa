@@ -23,7 +23,7 @@ const CallChat = () => {
             title={"Chat Now"}
             icon={<BsChatSquareText />}
             paragraph={"Chat with our expert"}
-            iconColor={"text-amber-500"}
+            iconColor={"text-amber-500"} 
           />
         </div>
       </div>
