@@ -46,7 +46,7 @@ const QAComponent = () => {
               data.map((item: any, i: number) => (
                 <>
                   <QAItemComponent
-                    key={i}
+                    key={i} 
                     imageUrl={item.imageUrl}
                     url={item.url}
                     title={item.title}
