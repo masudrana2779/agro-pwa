@@ -13,7 +13,7 @@ const FarmingTipsComponent = () => {
     centerMode: true,
     centerPadding: "40px",
     autoplay: true,
-    autoplaySpeed: 4000,
+    autoplaySpeed: 4000, 
   };
   return (
     <>
