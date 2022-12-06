@@ -8,22 +8,22 @@ const CallChat = () => {
       <div className="p-4">
         <div className="grid grid-cols-1 gap-5">
           <CallChatItem
-            bgColor="bg-green-600"
+            bgColor="bg-custom_green-400"
             title={"Audio Call"}
             icon={<FiPhoneCall />}
             paragraph={"Call our expert for suggestion"}
             iconColor={"text-white"}
             titleColor={"text-white"}
             paragraphColor={"text-white"}
-          /> 
+          />
           <CallChatItem
             bgColor="bg-white"
-            titleColor="text-green-700"
-            paragraphColor="text-gray-800"
+            titleColor="text-custom_orange-100"
+            paragraphColor="text-custom_gray-400"
             title={"Chat Now"}
             icon={<BsChatSquareText />}
             paragraph={"Chat with our expert"}
-            iconColor={"text-amber-500"} 
+            iconColor={"text-amber-500"}
           />
         </div>
       </div>

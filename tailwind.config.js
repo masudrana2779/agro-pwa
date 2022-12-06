@@ -7,18 +7,20 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        gray: {
+        custom_gray: {
           100: "#EAEBE9",
           200: "#A9B2B6",
+          400: "#808080",
         },
-        orange: {
-          100: "#FFCE82",
-          200: "#F9B266",
+        custom_orange: {
+          100: "#FAC84A",
+          200: "#FFCE82",
+          300: "#F9B266",
         },
-        red: {
+        custom_red: {
           400: "#F65D5A",
         },
-        green: {
+        custom_green: {
           100: "#E6F1E6",
           200: "#D7EADD",
           300: "#CCDDD5",
