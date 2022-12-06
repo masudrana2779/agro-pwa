@@ -10,6 +10,7 @@ module.exports = {
         custom_gray: {
           100: "#EAEBE9",
           200: "#A9B2B6",
+          300: "#828282",
           400: "#808080",
         },
         custom_orange: {
@@ -19,6 +20,7 @@ module.exports = {
         },
         custom_red: {
           400: "#F65D5A",
+          500: "#FF0B0B",
         },
         custom_green: {
           100: "#E6F1E6",

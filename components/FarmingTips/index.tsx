@@ -1,10 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import Slider from "react-slick";
+import { FarmingTipsWrap } from "./FarmingTips.styled";
 
 const FarmingTipsComponent = () => {
   var settings = {
-    dots: false,
+    dots: true,
     infinite: true,
     speed: 1500,
     slidesToShow: 2,
@@ -13,19 +14,21 @@ const FarmingTipsComponent = () => {
     centerMode: true,
     centerPadding: "40px",
     autoplay: true,
-    autoplaySpeed: 4000, 
+    autoplaySpeed: 4000,
   };
   return (
     <>
       <div className="p-4">
         <div className="flex justify-between mb-2">
-          <div className={`text-lg text-green-700 font-medium`}>Farming Tips</div>
+          <div className={`text-lg text-green-700 font-medium`}>
+            Farming Tips
+          </div>
           <div className={`text-sm text-gray-800 font-normal`}>
             <Link href={"/"}>See all</Link>
           </div>
         </div>
         <div className="">
-          <div className="">
+          <FarmingTipsWrap className="">
             <Slider {...settings}>
               <div className="">
                 <div className="">
@@ -64,7 +67,7 @@ const FarmingTipsComponent = () => {
                 </div>
               </div>
             </Slider>
-          </div>
+          </FarmingTipsWrap>
         </div>
       </div>
     </>
