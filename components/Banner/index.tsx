@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Slider from "react-slick";
+import { BannerWrap } from "./banner.styled";
 
 const BannerComponent = () => {
   var settings = {
@@ -17,7 +18,7 @@ const BannerComponent = () => {
   return (
     <>
       <div className="py-4">
-        <div className="">
+        <BannerWrap className="">
           <Slider {...settings}>
             <div className="">
               <Image
@@ -50,7 +51,7 @@ const BannerComponent = () => {
               />
             </div>
           </Slider>
-        </div>
+        </BannerWrap>
       </div>
     </>
   );
