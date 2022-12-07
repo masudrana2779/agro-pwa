@@ -36,7 +36,7 @@ const InnerSliderComponent = () => {
                   />
                 </div>
                 <div className="">
-                  <div className="text-base font-medium text-black mb-2">
+                  <div className="text-base leading-5 font-medium text-black mb-2">
                     Bangladesh rice farmers invent new varieties to withstand
                     salt, storms.
                   </div>
