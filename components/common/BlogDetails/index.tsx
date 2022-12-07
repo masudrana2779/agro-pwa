@@ -33,9 +33,12 @@ const BlogDetailsComponent = () => {
               <div className="text-sm text-custom_gray-500 leading-[22px] mb-4">
                 In the 1970s, Nandi Dulal, a 70-year-old paramedic-turned-farmer
                 from Mukandapur village in Satkhira{`'`}s Kaliganj upazila, bred
-                25 varieties of rice with his fellow farmers. By then, they
-                discovered that their field was becoming saltier with time and
-                that the rice field was becoming sterile.
+                25 varieties of rice with his fellow farmers.
+              </div>
+              <div className="text-sm text-custom_gray-500 leading-[22px] mb-4">
+                {" "}
+                By then, they discovered that their field was becoming saltier
+                with time and that the rice field was becoming sterile.
               </div>
               <div className="text-sm text-custom_gray-500 leading-[22px] mb-4">
                 {`"`}As the arable land became saltier, it hindered production
