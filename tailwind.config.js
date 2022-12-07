@@ -8,6 +8,7 @@ module.exports = {
     extend: {
       colors: {
         custom_gray: {
+          50: "#F3F3F3",
           100: "#EAEBE9",
           200: "#A9B2B6",
           300: "#828282",

@@ -17,13 +17,13 @@ const CallChat = () => {
             paragraphColor={"text-white"}
           />
           <CallChatItem
-            bgColor="bg-white"
-            titleColor="text-custom_orange-100"
+            bgColor="bg-custom_gray-100"
+            titleColor="text-custom_orange-300"
             paragraphColor="text-custom_gray-400"
             title={"Chat Now"}
             icon={<BsChatSquareText />}
             paragraph={"Chat with our expert"}
-            iconColor={"text-amber-500"}
+            iconColor={"text-custom_orange-300"}
           />
         </div>
       </div>
