@@ -1,5 +1,6 @@
 import InnerHeaderComponent from "../components/common/InnerHeader";
 import InnerSliderComponent from "../components/common/InnerSlider";
+import TabMenuComponent from "../components/common/TabMenu";
 import Layout from "../components/Layouts";
 
 const BlogPage = () => {
@@ -9,7 +10,7 @@ const BlogPage = () => {
         <>
           <InnerHeaderComponent />
           <InnerSliderComponent />
-          <p>Blog</p>
+          <TabMenuComponent />
         </>
       </Layout>
     </>

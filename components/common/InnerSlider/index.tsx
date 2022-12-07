@@ -24,7 +24,7 @@ const InnerSliderComponent = () => {
           <Slider {...settings}>
             {[1, 1, 1, 1].map((item, i: number) => (
               <div className="px-2" key={i}>
-                <div className="flex mb-3">
+                <div className="flex mb-2">
                   <Image
                     src={"/assets/images/innerSlider-1.png"}
                     width={343}
@@ -36,7 +36,7 @@ const InnerSliderComponent = () => {
                   />
                 </div>
                 <div className="">
-                  <div className="text-base font-medium text-black mb-1">
+                  <div className="text-base font-medium text-black mb-2">
                     Bangladesh rice farmers invent new varieties to withstand
                     salt, storms.
                   </div>
