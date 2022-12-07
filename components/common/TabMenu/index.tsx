@@ -1,6 +1,10 @@
 import Image from "next/image";
 
-const TabMenuComponent = () => {
+type TabMenuComponentProps = {
+  grid?: boolean;
+};
+
+const TabMenuComponent = ({ grid }: TabMenuComponentProps) => {
   const menus = [
     "all",
     "first",
@@ -28,40 +32,42 @@ const TabMenuComponent = () => {
                 </li>
               ))}
           </ul>
-          <div className="pt-2">
-            {[1,1,1,1,1,1,1].map((i:number)=><div key={i} className="mb-4">
-              <div className="flex space-x-3">
-                <div className="">
-                  <div className="flex w-24">
-                    <Image
-                      src={"/assets/images/qa-1.png"}
-                      width={97}
-                      height={79}
-                      alt="banner"
-                      placeholder="blur"
-                      className="rounded-xl"
-                      blurDataURL={`${"/assets/images/qa-1.png"}`}
-                    />
-                  </div>
-                </div>
-                <div className="">
-                  <div className="pt-1">
-                    <div className="text-sm leading-[18px] font-medium text-black mb-2">
-                      Bangladesh rice farmers invent new varieties to withstand
-                      salt, storms.
+          <div className={`${grid ? "grid grid-cols-2 pt-2 gap-4" : "pt-2"}`}>
+            {[1, 1, 1, 1, 1, 1, 1].map((i: number) => (
+              <div key={i} className="mb-4">
+                <div className={`${grid ? "" : "flex space-x-3"}`}>
+                  <div className="">
+                    <div className={`flex ${grid ? " w-full" : "w-24"}`}>
+                      <Image
+                        src={"/assets/images/qa-1.png"}
+                        width={`${grid ? 156 : 97}`}
+                        height={`${grid ? 191 : 79}`}
+                        alt="banner"
+                        placeholder="blur"
+                        className="rounded-xl w-full"
+                        blurDataURL={`${"/assets/images/qa-1.png"}`}
+                      />
                     </div>
-                    <ul className="flex">
-                      <li className="inline-block text-[10px] font-light text-custom_gray-300 before:w-[2px] before:h-[2px] before:rounded-full before:bg-custom_gray-300 before::content-[''] before:top-[50%] before:-right-5 relative before:absolute mx-4 first:ml-0 last:before:hidden">
-                        Jan 3, 2022
-                      </li>
-                      <li className="inline-block text-[10px] font-light text-custom_gray-300 before:w-[2px] before:h-[2px] before:rounded-full before:bg-custom_gray-300 before::content-[''] before:top-[50%] before:-right-5 relative before:absolute mx-4 first:ml-0 last:before:hidden">
-                        3344 views
-                      </li>
-                    </ul>
+                  </div>
+                  <div className="">
+                    <div className="pt-1">
+                      <div className="text-sm leading-[18px] font-medium text-black mb-2">
+                        Bangladesh rice farmers invent new varieties to
+                        withstand salt, storms.
+                      </div>
+                      <ul className="flex">
+                        <li className="inline-block text-[10px] font-light text-custom_gray-300 before:w-[2px] before:h-[2px] before:rounded-full before:bg-custom_gray-300 before::content-[''] before:top-[50%] before:-right-5 relative before:absolute mx-4 first:ml-0 last:before:hidden">
+                          Jan 3, 2022
+                        </li>
+                        <li className="inline-block text-[10px] font-light text-custom_gray-300 before:w-[2px] before:h-[2px] before:rounded-full before:bg-custom_gray-300 before::content-[''] before:top-[50%] before:-right-5 relative before:absolute mx-4 first:ml-0 last:before:hidden">
+                          3344 views
+                        </li>
+                      </ul>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>)}
+            ))}
           </div>
         </div>
       </div>
