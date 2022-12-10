@@ -198,7 +198,43 @@ const ChatBox = ({ id }: ChatBoxProps) => {
                   </div>
                   <div className="">
                     <div className="relative mb-1 inline-block text-black rounded-lg bg-gray-300 py-2 px-4">
-                      <div className="flex space-x-2">
+                      <div className="grid grid-cols-4 gap-2">
+                        <div className="flex">
+                          <Image
+                            className="rounded-lg"
+                            src={"/assets/images/img-2.png"}
+                            width={68}
+                            height={68}
+                            alt="profile"
+                          />
+                        </div>
+                        <div className="flex">
+                          <Image
+                            className="rounded-lg"
+                            src={"/assets/images/img-2.png"}
+                            width={68}
+                            height={68}
+                            alt="profile"
+                          />
+                        </div>
+                        <div className="flex">
+                          <Image
+                            className="rounded-lg"
+                            src={"/assets/images/img-2.png"}
+                            width={68}
+                            height={68}
+                            alt="profile"
+                          />
+                        </div>
+                        <div className="flex">
+                          <Image
+                            className="rounded-lg"
+                            src={"/assets/images/img-2.png"}
+                            width={68}
+                            height={68}
+                            alt="profile"
+                          />
+                        </div>
                         <div className="flex">
                           <Image
                             className="rounded-lg"
