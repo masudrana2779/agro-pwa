@@ -11,19 +11,19 @@ const QAComponent = () => {
     },
     {
       imageUrl: "/assets/images/Plant.png",
-      url: "/",
+      url: "/blog",
       title: "Plant",
       bgGradient: "bg-gradient-to-r from-green-700 to-green-300",
     },
     {
       imageUrl: "/assets/images/cow.png",
-      url: "/",
+      url: "/blog",
       title: "Cattle",
       bgGradient: "bg-gradient-to-r from-yellow-600 to-yellow-300",
     },
     {
       imageUrl: "/assets/images/pngwing.png",
-      url: "/",
+      url: "/blog1",
       title: "Fruits",
       bgGradient: "bg-gradient-to-r from-red-600 to-red-300",
     },

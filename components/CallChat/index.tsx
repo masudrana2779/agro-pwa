@@ -25,7 +25,7 @@ const CallChat = () => {
             icon={<BsChatSquareText />}
             paragraph={"Chat with our expert"}
             iconColor={"text-custom_orange-300"}
-            link={'/chat'}
+            link={'/chat?title=Chat'}
           />
         </div>
       </div>
