@@ -9,12 +9,17 @@ const InnerHeaderComponent = () => {
     <>
       <div className="sticky top-0 z-50 flex justify-between items-center bg-custom_green-400 py-1 px-2">
         <div className="w-10 h-10 flex justify-center items-center">
-          <div className="text-white text-3xl cursor-pointer" onClick={() => router.back()}>
+          <div
+            className="text-white text-3xl cursor-pointer"
+            onClick={() => router.back()}
+          >
             <BiLeftArrowAlt />
           </div>
         </div>
         <div className="">
-          <div className="text-lg font-medium text-white">Q&A (Fish)</div>
+          <div className="text-lg font-medium text-white">
+            {router.query.title}
+          </div>
         </div>
         <div className="w-10 h-10 flex justify-center items-center">
           <div className="text-white relative">

@@ -5,7 +5,7 @@ const QAComponent = () => {
   const data = [
     {
       imageUrl: "/assets/images/fish.png",
-      url: "/",
+      url: "/blog",
       title: "fish",
       bgGradient: "bg-gradient-to-r from-violet-700 to-violet-300",
     },
@@ -35,7 +35,7 @@ const QAComponent = () => {
           <div className="flex justify-between mb-2">
             <div className={`text-lg text-green-700 font-medium`}>Q&A</div>
             <div className={`text-sm text-gray-800 font-normal`}>
-              <Link href={"/"}>See all</Link>
+              <Link href={"/blog1"}>See all</Link>
             </div>
           </div>
         </div>
@@ -48,7 +48,7 @@ const QAComponent = () => {
                   <QAItemComponent
                     key={i} 
                     imageUrl={item.imageUrl}
-                    url={item.url}
+                    url={`${item.url}?title=${item.title}`}
                     title={item.title}
                     bgGradient={item.bgGradient}
                   />
