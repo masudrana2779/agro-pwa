@@ -24,7 +24,7 @@ const FarmingTipsComponent = () => {
             Farming Tips
           </div>
           <div className={`text-sm text-gray-800 font-normal`}>
-            <Link href={"/"}>See all</Link>
+            <Link href={"/blog"}>See all</Link>
           </div>
         </div>
         <div className="">
