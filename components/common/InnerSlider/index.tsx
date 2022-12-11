@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import Slider from "react-slick";
 
 const InnerSliderComponent = () => {
@@ -24,21 +25,28 @@ const InnerSliderComponent = () => {
           <Slider {...settings}>
             {[1, 1, 1, 1].map((item, i: number) => (
               <div className="px-2" key={i}>
-                <div className="flex mb-2">
-                  <Image
-                    src={"/assets/images/innerSlider-1.png"}
-                    width={343}
-                    height={213}
-                    alt="banner"
-                    placeholder="blur"
-                    className="rounded-2xl"
-                    blurDataURL={`${"/assets/images/innerSlider-1.png"}`}
-                  />
-                </div>
+                <Link href={`/blog-details?title=Details ${item}`} className="">
+                  <div className="flex mb-2">
+                    <Image
+                      src={"/assets/images/innerSlider-1.png"}
+                      width={343}
+                      height={213}
+                      alt="banner"
+                      placeholder="blur"
+                      className="rounded-2xl"
+                      blurDataURL={`${"/assets/images/innerSlider-1.png"}`}
+                    />
+                  </div>
+                </Link>
                 <div className="">
                   <div className="text-base leading-5 font-medium text-black mb-2">
-                    Bangladesh rice farmers invent new varieties to withstand
-                    salt, storms.
+                    <Link
+                      href={`/blog-details?title=Details ${item}`}
+                      className=""
+                    >
+                      Bangladesh rice farmers invent new varieties to withstand
+                      salt, storms.
+                    </Link>
                   </div>
                   <ul className="flex">
                     <li className="inline-block text-[10px] font-light text-custom_gray-300 before:w-[2px] before:h-[2px] before:rounded-full before:bg-custom_gray-300 before::content-[''] before:top-[50%] before:-right-5 relative before:absolute mx-4 first:ml-0 last:before:hidden">
