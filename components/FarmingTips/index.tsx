@@ -24,48 +24,28 @@ const FarmingTipsComponent = () => {
             Farming Tips
           </div>
           <div className={`text-sm text-gray-800 font-normal`}>
-            <Link href={"/blog"}>See all</Link>
+            <Link href={"/blog?title=Farming Tips"}>See all</Link>
           </div>
         </div>
         <div className="">
           <FarmingTipsWrap className="">
             <Slider {...settings}>
-              <div className="">
-                <div className="">
-                  <Image
-                    src={"/assets/images/slider-1.png"}
-                    width={126}
-                    height={169}
-                    alt="slider"
-                    placeholder="blur"
-                    blurDataURL={`${"/assets/images/slider-1.png"}`}
-                  />
+              {[1, 2, 3, 1, 2, 3].map((item: any, i: number) => (
+                <div key={i} className="">
+                  <Link href={"/blog-details?title=Tips Details"}>
+                    <div className="flex">
+                      <Image
+                        src={`/assets/images/slider-${item}.png`}
+                        width={126}
+                        height={169}
+                        alt="slider"
+                        placeholder="blur"
+                        blurDataURL={`${`/assets/images/slider-${item}.png`}`}
+                      />
+                    </div>
+                  </Link>
                 </div>
-              </div>
-              <div className="">
-                <div className="">
-                  <Image
-                    src={"/assets/images/slider-2.png"}
-                    width={126}
-                    height={169}
-                    alt="slider"
-                    placeholder="blur"
-                    blurDataURL={`${"/assets/images/slider-2.png"}`}
-                  />
-                </div>
-              </div>
-              <div className="">
-                <div className="">
-                  <Image
-                    src={"/assets/images/slider-3.png"}
-                    width={126}
-                    height={169}
-                    alt="slider"
-                    placeholder="blur"
-                    blurDataURL={`${"/assets/images/slider-3.png"}`}
-                  />
-                </div>
-              </div>
+              ))}
             </Slider>
           </FarmingTipsWrap>
         </div>
