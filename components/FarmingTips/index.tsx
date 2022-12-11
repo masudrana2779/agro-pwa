@@ -40,6 +40,7 @@ const FarmingTipsComponent = () => {
                         height={169}
                         alt="slider"
                         placeholder="blur"
+                        className="w-full mx-2 rounded-2xl"
                         blurDataURL={`${`/assets/images/slider-${item}.png`}`}
                       />
                     </div>

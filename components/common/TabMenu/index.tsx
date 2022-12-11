@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 type TabMenuComponentProps = {
   grid?: boolean;
@@ -33,10 +34,13 @@ const TabMenuComponent = ({ grid }: TabMenuComponentProps) => {
               ))}
           </ul>
           <div className={`${grid ? "grid grid-cols-2 pt-2 gap-4" : "pt-2"}`}>
-            {[1, 1, 1, 1, 1, 1, 1].map((i: number) => (
+            {[1, 1, 1, 1, 1, 1, 1].map((item: any, i: number) => (
               <div key={i} className="mb-4">
                 <div className={`${grid ? "" : "flex space-x-3"}`}>
-                  <div className="">
+                  <Link
+                    href={`/blog-details?title=Details ${item}`}
+                    className=""
+                  >
                     <div className={`flex ${grid ? " w-full" : "w-24"}`}>
                       <Image
                         src={"/assets/images/qa-1.png"}
@@ -48,12 +52,17 @@ const TabMenuComponent = ({ grid }: TabMenuComponentProps) => {
                         blurDataURL={`${"/assets/images/qa-1.png"}`}
                       />
                     </div>
-                  </div>
+                  </Link>
                   <div className="">
                     <div className="pt-1">
                       <div className="text-sm leading-[18px] font-medium text-black mb-2">
-                        Bangladesh rice farmers invent new varieties to
-                        withstand salt, storms.
+                        <Link
+                          href={`/blog-details?title=Details ${item}`}
+                          className=""
+                        >
+                          Bangladesh rice farmers invent new varieties to
+                          withstand salt, storms.
+                        </Link>
                       </div>
                       <ul className="flex">
                         <li className="inline-block text-[10px] font-light text-custom_gray-300 before:w-[2px] before:h-[2px] before:rounded-full before:bg-custom_gray-300 before::content-[''] before:top-[50%] before:-right-5 relative before:absolute mx-4 first:ml-0 last:before:hidden">
