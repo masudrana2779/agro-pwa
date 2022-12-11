@@ -15,6 +15,7 @@ const CallChat = () => {
             iconColor={"text-white"}
             titleColor={"text-white"}
             paragraphColor={"text-white"}
+            link={"/calling"}
           />
           <CallChatItem
             bgColor="bg-custom_gray-100"
@@ -24,6 +25,7 @@ const CallChat = () => {
             icon={<BsChatSquareText />}
             paragraph={"Chat with our expert"}
             iconColor={"text-custom_orange-300"}
+            link={'/chat'}
           />
         </div>
       </div>
