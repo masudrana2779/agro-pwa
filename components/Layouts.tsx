@@ -1,5 +1,6 @@
 import Head from "next/head";
 import { FC, ReactElement } from "react";
+import FooterMenuComponent from "./common/FooterMenu";
 
 type LayoutProps = {
   children?: ReactElement;
@@ -53,6 +54,7 @@ const Layout: FC<LayoutProps> = ({
         <link rel="icon" type="image/png" href="/favicon.ico" />
       </Head>
       <>{children}</>
+      <FooterMenuComponent />
     </>
   );
 };

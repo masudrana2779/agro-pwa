@@ -4,9 +4,7 @@ import Layout from "../components/Layouts";
 export default function Chat() {
   return (
     <>
-      <Layout>
         <ChatBox />
-      </Layout>
     </>
   );
 }
