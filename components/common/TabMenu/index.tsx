@@ -38,7 +38,7 @@ const TabMenuComponent = ({ grid }: TabMenuComponentProps) => {
               <div key={i} className="mb-4">
                 <div className={`${grid ? "" : "flex space-x-3"}`}>
                   <Link
-                    href={`/blog-details?title=Details ${item}`}
+                    href={`/blog-details?title=Details ${i}`}
                     className=""
                   >
                     <div className={`flex ${grid ? " w-full" : "w-24"}`}>
@@ -57,7 +57,7 @@ const TabMenuComponent = ({ grid }: TabMenuComponentProps) => {
                     <div className="pt-1">
                       <div className="text-sm leading-[18px] font-medium text-black mb-2">
                         <Link
-                          href={`/blog-details?title=Details ${item}`}
+                          href={`/blog-details?title=Details ${i}`}
                           className=""
                         >
                           Bangladesh rice farmers invent new varieties to

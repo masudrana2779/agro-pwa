@@ -25,7 +25,7 @@ const InnerSliderComponent = () => {
           <Slider {...settings}>
             {[1, 1, 1, 1].map((item, i: number) => (
               <div className="px-2" key={i}>
-                <Link href={`/blog-details?title=Details Page`} className="">
+                <Link href={`/blog-details?title=Details Page ${i}`} className="">
                   <div className="flex mb-2">
                     <Image
                       src={"/assets/images/innerSlider-1.png"}
@@ -41,7 +41,7 @@ const InnerSliderComponent = () => {
                 <div className="">
                   <div className="text-base leading-5 font-medium text-black mb-2">
                     <Link
-                      href={`/blog-details?title=Details Page`}
+                      href={`/blog-details?title=Details Page ${i}`}
                       className=""
                     >
                       Bangladesh rice farmers invent new varieties to withstand
