@@ -1,9 +1,11 @@
 import Image from "next/image";
+import { useRouter } from "next/router";
 import { AiFillSound } from "react-icons/ai";
 import { BsMicFill } from "react-icons/bs";
 import { MdOutlineCallEnd } from "react-icons/md";
 
 const CallingComponent = () => {
+  const router = useRouter();
   return (
     <div className="w-full h-screen relative">
       <div
@@ -48,7 +50,10 @@ const CallingComponent = () => {
         <div className="cursor-pointer w-10 h-10 rounded-full flex items-center justify-center bg-custom_green-500 text-white">
           <AiFillSound />
         </div>
-        <div className="cursor-pointer w-12 h-12 text-2xl rounded-full flex items-center justify-center bg-custom_green-500 text-white bg-gradient-to-t to-custom_red-300 from-custom_red-500">
+        <div
+          onClick={() => router.back()}
+          className="cursor-pointer w-12 h-12 text-2xl rounded-full flex items-center justify-center bg-custom_green-500 text-white bg-gradient-to-t to-custom_red-300 from-custom_red-500"
+        >
           <MdOutlineCallEnd />
         </div>
         <div className="cursor-pointer w-10 h-10 rounded-full flex items-center justify-center bg-custom_green-500 text-white">
