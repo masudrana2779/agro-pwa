@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 type CallChatItemProps = {
   bgColor: string;
   titleColor: string;
@@ -6,6 +8,7 @@ type CallChatItemProps = {
   icon: any;
   paragraph: string;
   iconColor: string;
+  link: string;
 };
 
 const CallChatItem = ({
@@ -16,11 +19,12 @@ const CallChatItem = ({
   icon,
   paragraph,
   iconColor,
+  link
 }: CallChatItemProps) => {
   return (
     <>
       <div className={`${bgColor} rounded-lg`}>
-        <div className="flex space-x-3 items-center">
+        <Link href={link} className="flex space-x-3 items-center">
           <div className="">
             <div
               className={`w-20 h-20 flex items-center justify-center text-4xl ${iconColor} opacity-60`}
@@ -36,7 +40,7 @@ const CallChatItem = ({
               </div>
             </div>
           </div>
-        </div>
+        </Link>
       </div>
     </>
   );
