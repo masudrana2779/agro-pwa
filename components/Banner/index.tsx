@@ -1,9 +1,10 @@
 import Image from "next/image";
 import Slider from "react-slick";
+import { BannerWrap } from "./banner.styled";
 
 const BannerComponent = () => {
   var settings = {
-    dots: false,
+    dots: true,
     infinite: true,
     speed: 2000,
     slidesToShow: 1,
@@ -17,40 +18,25 @@ const BannerComponent = () => {
   return (
     <>
       <div className="py-4">
-        <div className="">
+        <BannerWrap className="">
           <Slider {...settings}>
-            <div className="">
-              <Image
-                src={"/assets/images/banner-1.png"}
-                width={343}
-                height={213}
-                alt="banner"
-                placeholder="blur"
-                blurDataURL={`${"/assets/images/banner-1.png"}`}
-              />
-            </div>
-            <div className="">
-              <Image
-                src={"/assets/images/banner-1.png"}
-                width={343}
-                height={213}
-                alt="banner"
-                placeholder="blur"
-                blurDataURL={`${"/assets/images/banner-1.png"}`}
-              />
-            </div>
-            <div className="">
-              <Image
-                src={"/assets/images/banner-1.png"}
-                width={343}
-                height={213}
-                alt="banner"
-                placeholder="blur"
-                blurDataURL={`${"/assets/images/banner-1.png"}`}
-              />
-            </div>
+            {[1, 1, 1, 1].map((item, i: number) => (
+              <div key={i} className="">
+                <div className="flex">
+                  <Image
+                    src={"/assets/images/banner-1.png"}
+                    width={343}
+                    height={213}
+                    alt="banner"
+                    placeholder="blur"
+                    className="rounded-2xl"
+                    blurDataURL={`${"/assets/images/banner-1.png"}`}
+                  />
+                </div>
+              </div>
+            ))}
           </Slider>
-        </div>
+        </BannerWrap>
       </div>
     </>
   );

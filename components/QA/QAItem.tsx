@@ -32,7 +32,7 @@ const QAItemComponent = ({
           <div className="text-lg text-white font-medium">{title}</div>
         </div>
       </Link>
-    </>
+    </> 
   );
 };
 

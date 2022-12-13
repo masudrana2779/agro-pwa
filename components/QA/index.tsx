@@ -5,25 +5,25 @@ const QAComponent = () => {
   const data = [
     {
       imageUrl: "/assets/images/fish.png",
-      url: "/",
+      url: "/blog",
       title: "fish",
       bgGradient: "bg-gradient-to-r from-violet-700 to-violet-300",
     },
     {
       imageUrl: "/assets/images/Plant.png",
-      url: "/",
+      url: "/blog",
       title: "Plant",
       bgGradient: "bg-gradient-to-r from-green-700 to-green-300",
     },
     {
       imageUrl: "/assets/images/cow.png",
-      url: "/",
+      url: "/blog",
       title: "Cattle",
       bgGradient: "bg-gradient-to-r from-yellow-600 to-yellow-300",
     },
     {
       imageUrl: "/assets/images/pngwing.png",
-      url: "/",
+      url: "/blog1",
       title: "Fruits",
       bgGradient: "bg-gradient-to-r from-red-600 to-red-300",
     },
@@ -35,7 +35,7 @@ const QAComponent = () => {
           <div className="flex justify-between mb-2">
             <div className={`text-lg text-green-700 font-medium`}>Q&A</div>
             <div className={`text-sm text-gray-800 font-normal`}>
-              <Link href={"/"}>See all</Link>
+              <Link href={"/blog1"}>See all</Link>
             </div>
           </div>
         </div>
@@ -46,9 +46,9 @@ const QAComponent = () => {
               data.map((item: any, i: number) => (
                 <>
                   <QAItemComponent
-                    key={i}
+                    key={i} 
                     imageUrl={item.imageUrl}
-                    url={item.url}
+                    url={`${item.url}?title=${item.title}`}
                     title={item.title}
                     bgGradient={item.bgGradient}
                   />
