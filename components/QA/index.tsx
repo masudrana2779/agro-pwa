@@ -1,5 +1,6 @@
 import Link from "next/link";
 import QAItemComponent from "./QAItem";
+import {useGetCategoriesQuery} from "../../redux/reducer/category/query";
 
 const QAComponent = () => {
   const data = [

@@ -4,7 +4,7 @@ import Slider from "react-slick";
 import { FarmingTipsWrap } from "./FarmingTips.styled";
 
 const FarmingTipsComponent = () => {
-  var settings = {
+  const settings = {
     dots: true,
     infinite: true,
     speed: 1500,

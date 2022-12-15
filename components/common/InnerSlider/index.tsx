@@ -1,9 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import Slider from "react-slick";
+import {useGetBlogsQuery} from "../../../redux/reducer/blog/query";
 
 const InnerSliderComponent = () => {
-  var settings = {
+  const {data: blogs} = useGetBlogsQuery();
+  const settings = {
     dots: false,
     infinite: true,
     speed: 2000,
@@ -15,6 +17,7 @@ const InnerSliderComponent = () => {
     autoplay: true,
     autoplaySpeed: 5000,
   };
+
   return (
     <>
       <div className="p-4">

@@ -1,40 +1,39 @@
 import Image from "next/image";
 import Link from "next/link";
+import {useGetCategoriesQuery} from "../../../redux/reducer/category/query";
+import {useGetBlogsQuery} from "../../../redux/reducer/blog/query";
 
 type TabMenuComponentProps = {
   grid?: boolean;
 };
 
 const TabMenuComponent = ({ grid }: TabMenuComponentProps) => {
-  const menus = [
-    "all",
-    "first",
-    "second",
-    "third",
-    "fourth",
-    "fifth",
-    "sixth",
-    "seventh",
-    "eighth",
-  ];
+  const {data: categories} = useGetCategoriesQuery();
+  const {data: blogs} = useGetBlogsQuery();
+
   return (
     <>
       <div className="">
         <div className="p-4">
           <ul className="flex overflow-x-auto space-x-4 border-t py-5">
-            {menus &&
-              menus.length > 0 &&
-              menus.map((menu, i: number) => (
+            <li
+                className="border border-custom_gray-100 capitalize rounded-md text-sm text-custom_gray-300 px-5 py-2 first:bg-custom_green-400 first:text-white hover:bg-custom_green-400 hover:text-white cursor-pointer"
+            >
+              All
+            </li>
+            {categories &&
+                categories.length > 0 &&
+                categories.map((category, i: number) => (
                 <li
                   key={i}
                   className="border border-custom_gray-100 capitalize rounded-md text-sm text-custom_gray-300 px-5 py-2 first:bg-custom_green-400 first:text-white hover:bg-custom_green-400 hover:text-white cursor-pointer"
                 >
-                  {menu}
+                  {category.name}
                 </li>
               ))}
           </ul>
           <div className={`${grid ? "grid grid-cols-2 pt-2 gap-4" : "pt-2"}`}>
-            {[1, 1, 1, 1, 1, 1, 1].map((item: any, i: number) => (
+            {blogs && blogs.map((blog: any, i: number) => (
               <div key={i} className="mb-4">
                 <div className={`${grid ? "" : "flex space-x-3"}`}>
                   <Link
@@ -60,8 +59,7 @@ const TabMenuComponent = ({ grid }: TabMenuComponentProps) => {
                           href={`/blog-details?title=Details ${i}`}
                           className=""
                         >
-                          Bangladesh rice farmers invent new varieties to
-                          withstand salt, storms.
+                          {blog.title}
                         </Link>
                       </div>
                       <ul className="flex">
