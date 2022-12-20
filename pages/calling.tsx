@@ -1,10 +1,13 @@
 import CallingComponent from "../components/common/Calling";
-import Layout from "../components/Layouts";
+import {NextPage} from "next";
+import WithAuth from "../HOC/withAuth";
 
-export default function Calling() {
+const Calling: NextPage = () => {
   return (
     <>
         <CallingComponent />
     </>
   );
 }
+
+export default WithAuth(Calling);
