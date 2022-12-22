@@ -3,9 +3,15 @@ import { useRouter } from "next/router";
 import { AiFillSound } from "react-icons/ai";
 import { BsMicFill } from "react-icons/bs";
 import { MdOutlineCallEnd } from "react-icons/md";
-
-const CallingComponent = () => {
+type CallingComponentProps = {
+  isConnect: boolean;
+  localStream: any
+  remoteStream: any
+}
+const CallingComponent = ({isConnect, localStream, remoteStream}: CallingComponentProps) => {
   const router = useRouter();
+
+  console.log(44,remoteStream)
   return (
     <div className="w-full h-screen relative">
       <div
@@ -15,9 +21,43 @@ const CallingComponent = () => {
         <div className="bg-[url('/assets/images/callingBg.png')] h-full w-full  bg-no-repeat bg-center bg-cover flex items-center justify-center">
           <div className="">
             {/* after call Connected visiable */}
-            {/* <div className="text-white text-base mb-5 text-center">
-              <b>Modhu</b>
-            </div> */}
+            {
+                isConnect &&
+
+                <div className="text-white text-base mb-5 text-center">
+                  <video
+                      className="videoContainer"
+                      ref={(video: HTMLVideoElement | null) => {
+                        if (video) {
+                          video.srcObject = localStream
+                        }
+                      }}
+                      autoPlay
+                      playsInline
+                      muted={true}
+                  />
+                  <b>Modhu</b>
+                </div>
+            }
+
+            {
+                isConnect && remoteStream &&
+
+                <div className="text-white text-base mb-5 text-center">
+                  <video
+                      className="videoContainer"
+                      ref={(video: HTMLVideoElement | null) => {
+                        if (video) {
+                          video.srcObject = remoteStream
+                        }
+                      }}
+                      autoPlay
+                      playsInline
+                      muted={true}
+                  />
+                  <b>Modhu</b>
+                </div>
+            }
             {/* after call Connected visiable */}
             <div className="flex justify-center mb-8">
               <Image
@@ -32,16 +72,28 @@ const CallingComponent = () => {
             </div>
             <div className=" text-center">
               {/* after call Connected visiable */}
-              {/* <p className="text-white text-base">
-                <b>Connected</b>
-              </p>
-              <p className="text-white text-base">02: 12</p> */}
+              {
+                  isConnect &&
+                  <>
+                    <p className="text-white text-base">
+                      <b>Connected</b>
+                    </p>
+                    <p className="text-white text-base">02: 12</p>
+                  </>
+              }
               {/* after call Connected visiable */}
-              <p className="text-white text-base">
-                <b>Jodu</b>
-                <span className="mx-2">is calling</span>
-                <b>Modhu</b>
-              </p>
+              {
+                  !isConnect &&
+
+                  <>
+                    <p className="text-white text-base">
+                      <b>Jodu</b>
+                      <span className="mx-2">is calling</span>
+                      <b>Modhu</b>
+                    </p>
+                  </>
+              }
+
             </div>
           </div>
         </div>

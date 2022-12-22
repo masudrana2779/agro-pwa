@@ -7,7 +7,7 @@ export enum MessageType {
     PATIENT = "PATIENT",
 }
 
-enum CallStatusType {
+export enum CallStatusType {
     CALL_DOCTOR_RECEIVED = "CALL_DOCTOR_RECEIVED",
     CALL_CONNECTED = "CALL_CONNECTED",
     CALL_REJECTED = "CALL_REJECTED",
@@ -72,4 +72,25 @@ export enum webRTCSignaling {
 export enum pageRedirect {
     LOGIN = 99,
     PROFILE_UPDATE = 100,
+}
+
+export enum PreOfferAnswerType {
+    CALLEE_NOT_FOUND = 'CALLEE_NOT_FOUND',
+    CALL_ACCEPTED = 'CALL_ACCEPTED',
+    CALL_REJECTED = 'CALL_REJECTED',
+    CALL_UNAVAILABLE = 'CALL_UNAVAILABLE',
+    CALLEE_NO_ANSWER = 'CALLEE_NO_ANSWER',
+    CALL_HANGED_UP = 'CALL_HANGED_UP',
+    CALL_ENDED = 'CALL_ENDED',
+    VIDEO_OFF='VIDEO_OFF',
+    VIDEO_ON='VIDEO_ON',
+}
+
+export enum socketListener {
+    CONNECT = 'connect',
+    USER_SESSION = 'user_session',
+    PRE_OFFER = 'pre-offer',
+    PRE_OFFER_ANSWER = 'pre-offer-answer',
+    USER_HANGED_UP = 'user-hanged-up',
+    DISCONNECT = 'disconnect'
 }

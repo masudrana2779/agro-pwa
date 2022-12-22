@@ -7,6 +7,7 @@ import {config} from "../../config";
 import {setCookie} from "cookies-next";
 import {useRouter} from "next/router";
 import {UserType} from "../../enum";
+import {SocketIO} from "../../designPattern/SocketIO";
 
 const users: User[] = [
     {
@@ -45,12 +46,15 @@ const LoginComponent = () => {
         const user = await users.find(item => item.phoneNumber === values.phoneNumber);
 
         if (user){
-            await setCookie(config.cookieName, JSON.stringify({uuid: user.phoneNumber, rule: user.rule}),
+            await setCookie(config.cookieName, JSON.stringify(user),
                 {
                     path: "/",
                     maxAge: 2628000, // Expires after 1 month
                     sameSite: 'strict',
                 });
+            const socket = SocketIO.getInstance();
+            socket && socket.connection(user);
+
             await router.push(user.rule === UserType.KISHI_BID ? '/kishibid' : '/')
         }
         resetForm()

@@ -1,6 +1,4 @@
 import React, { ChangeEventHandler } from "react";
-import { DivBlock } from "../styledComponents/Typography.Styled";
-
 type InputProps = {
   label: string;
   name: string;
