@@ -3,7 +3,13 @@ import type { AppProps } from 'next/app'
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import {wrapper} from "../redux/store";
+import {Provider} from "react-redux";
 
-export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+ const App = ({ Component, pageProps, ...rest }: AppProps) => {
+   const {store} = wrapper.useWrappedStore(rest);
+   console.log(store);
+     return <Provider store={store}><Component {...pageProps} /></Provider>
 }
+
+export default App;
