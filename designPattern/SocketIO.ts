@@ -25,7 +25,7 @@ export class SocketIO implements ISocketEvent {
 
     //https://socket.theroyalsoft.com
     private constructor() {
-        this.socket = io('https://socket.theroyalsoft.com', {
+        this.socket = io('http://localhost:3005', {
             withCredentials: true
             // extraHeaders: {   "Access-Control-Allow-Origin":'true'  }
         });
@@ -55,7 +55,6 @@ export class SocketIO implements ISocketEvent {
     }
 
     sendPreOffer(item: IPreOffer): void {
-        console.log('pre offer',item);
         this.socket.emit(socketListener.PRE_OFFER, item);
     }
 

@@ -43,23 +43,19 @@ const Calling: NextPage = ({authSession}: any) => {
             let webRtcSignal: IWebRTCSignaling = JSON.parse(data.toString());
             if (webRtcSignal.type === webRTCSignaling.OFFER) {
                 console.log('Offer received',webRtcSignal);
-                peer.setRemoteDescription({
+                await peer.setRemoteDescription({
                     type: 'offer',
                     sdp: webRtcSignal.offer
-                }).then((r: void) => console.log('')).catch((e: any) => console.log(''));
-
+                });
 
                 const remoteStream = new MediaStream();
                 peer.ontrack = async (event: RTCTrackEvent) => {
+                    console.log(event.track);
                     await remoteStream.addTrack(event.track);
                     await setRemoteList(remoteStream);
                 };
-
                 const answer:any = await peer.createAnswer();
-                peer.setLocalDescription(answer);
-
-
-
+                await peer.setLocalDescription(answer);
                 socket.sendDataUsingWebRTCSignaling({
                     type: webRTCSignaling.ANSWER,
                     answer: answer.sdp,
@@ -92,10 +88,7 @@ const Calling: NextPage = ({authSession}: any) => {
     useEffect(()=>{
         socket.socket.on(socketListener.PRE_OFFER_ANSWER, (data: any) => {
             let offerData: any = JSON.parse(data);
-            console.log('accepted',offerData)
-
             if(offerData.preOfferAnswer === preOfferAnswer.CALL_ACCEPTED) {
-                console.log('accepted',offerData)
                 setIsConnect(true)
                 createPc('01717677540',offerData.fromId)
             }

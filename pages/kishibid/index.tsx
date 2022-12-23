@@ -41,7 +41,6 @@ const Dashboard: NextPage = ({authSession}: any) => {
         peer.onnegotiationneeded = async (event: Event) => {
             const offer = await peer.createOffer();
             await peer.setLocalDescription(offer);
-            console.log(offer)
             await socket.sendDataUsingWebRTCSignaling({
                 type: webRTCSignaling.OFFER,
                 offer: offer.sdp,
