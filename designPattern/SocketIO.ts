@@ -24,8 +24,9 @@ export class SocketIO implements ISocketEvent {
     // }
 
     //https://socket.theroyalsoft.com
+    // http://localhost:3005
     private constructor() {
-        this.socket = io('http://localhost:3005', {
+        this.socket = io('https://socket.theroyalsoft.com', {
             withCredentials: true
             // extraHeaders: {   "Access-Control-Allow-Origin":'true'  }
         });
