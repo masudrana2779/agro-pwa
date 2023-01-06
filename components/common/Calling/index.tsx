@@ -10,8 +10,6 @@ type CallingComponentProps = {
 }
 const CallingComponent = ({isConnect, localStream, remoteStream}: CallingComponentProps) => {
   const router = useRouter();
-
-  console.log(44,remoteStream)
   return (
     <div className="w-full h-screen relative">
       <div
@@ -25,39 +23,44 @@ const CallingComponent = ({isConnect, localStream, remoteStream}: CallingCompone
                 isConnect &&
 
                 <div className="text-white text-base mb-5 text-center">
-                  <video
-                      className="videoContainer"
-                      ref={(video: HTMLVideoElement | null) => {
-                        if (video) {
-                          video.srcObject = localStream
-                        }
-                      }}
-                      autoPlay
-                      playsInline
-                      muted={true}
+                  <iframe
+                      style={{ width: '100%', height: '200px' }}
+                      src={'https://meet.vumi.com.bd/doctor-2-patient-1'}
+                      allow="camera;microphone"
                   />
+                  {/*<video*/}
+                  {/*    className="videoContainer"*/}
+                  {/*    ref={(video: HTMLVideoElement | null) => {*/}
+                  {/*      if (video) {*/}
+                  {/*        video.srcObject = localStream*/}
+                  {/*      }*/}
+                  {/*    }}*/}
+                  {/*    autoPlay*/}
+                  {/*    playsInline*/}
+                  {/*    muted={true}*/}
+                  {/*/>*/}
                   <b>Modhu</b>
                 </div>
             }
 
-            {
-                isConnect && remoteStream &&
+            {/*{*/}
+            {/*    isConnect && remoteStream &&*/}
 
-                <div className="text-white text-base mb-5 text-center">
-                  <video
-                      className="videoContainer"
-                      ref={(video: HTMLVideoElement | null) => {
-                        if (video) {
-                          video.srcObject = remoteStream
-                        }
-                      }}
-                      autoPlay
-                      playsInline
-                      muted={true}
-                  />
-                  <b>Modhu</b>
-                </div>
-            }
+            {/*    <div className="text-white text-base mb-5 text-center">*/}
+            {/*      <video*/}
+            {/*          className="videoContainer"*/}
+            {/*          ref={(video: HTMLVideoElement | null) => {*/}
+            {/*            if (video) {*/}
+            {/*              video.srcObject = remoteStream*/}
+            {/*            }*/}
+            {/*          }}*/}
+            {/*          autoPlay*/}
+            {/*          playsInline*/}
+            {/*          muted={true}*/}
+            {/*      />*/}
+            {/*      <b>Modhu</b>*/}
+            {/*    </div>*/}
+            {/*}*/}
             {/* after call Connected visiable */}
             <div className="flex justify-center mb-8">
               <Image

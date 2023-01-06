@@ -12,6 +12,7 @@ const Dashboard: NextPage = ({authSession}: any) => {
     const [isAudioMute, setIsAudioMute] = useState<boolean>(false);
     const [isVideoMute, setIsVideoMute] = useState<boolean>(false);
     const [isSpeakerMute, setIsSpeakerMute] = useState<boolean>(false);
+    const [isConnect, setIsConnect] = useState<boolean>(false);
     const [caller, setCaller] = useState<any>(null);
     const socket = SocketIO.getInstance();
     socket && !socket.socket.id && socket.connection(authSession);
@@ -41,7 +42,6 @@ const Dashboard: NextPage = ({authSession}: any) => {
         peer.onnegotiationneeded = async (event: Event) => {
             const offer = await peer.createOffer();
             await peer.setLocalDescription(offer);
-            console.log(offer)
             await socket.sendDataUsingWebRTCSignaling({
                 type: webRTCSignaling.OFFER,
                 offer: offer.sdp,
@@ -92,7 +92,8 @@ const Dashboard: NextPage = ({authSession}: any) => {
             toId: '01717677540',
             preOfferAnswer: PreOfferAnswerType.CALL_ACCEPTED
         })
-        await createPc(caller.toId, '01717677540')
+        await setIsConnect(true)
+        //await createPc(caller.toId, '01717677540')
     },[caller, socket])
 
     return (
@@ -104,32 +105,41 @@ const Dashboard: NextPage = ({authSession}: any) => {
             {caller && (
                 <>
                     <h2>Incoming call from {caller.fromName}</h2>
-                    {
-                        localStream && <video
-                            className="videoContainer"
-                            ref={(video: HTMLVideoElement | null) => {
-                                if (video) {
-                                    video.srcObject = localStream
-                                }
-                            }}
-                            autoPlay
-                            playsInline
-                            muted={true}
-                        />
-                    }
+                    {/*{*/}
+                    {/*    localStream && <video*/}
+                    {/*        className="videoContainer"*/}
+                    {/*        ref={(video: HTMLVideoElement | null) => {*/}
+                    {/*            if (video) {*/}
+                    {/*                video.srcObject = localStream*/}
+                    {/*            }*/}
+                    {/*        }}*/}
+                    {/*        autoPlay*/}
+                    {/*        playsInline*/}
+                    {/*        muted={true}*/}
+                    {/*    />*/}
+                    {/*}*/}
 <br/>
                     {
-                        remoteList && <video
-                            className="videoContainer"
-                            ref={(video: HTMLVideoElement | null) => {
-                                if (video) {
-                                    video.srcObject = remoteList
-                                }
-                            }}
-                            autoPlay
-                            playsInline
-                            muted={true}
-                        />
+                        // remoteList && <video
+                        //     className="videoContainer"
+                        //     ref={(video: HTMLVideoElement | null) => {
+                        //         if (video) {
+                        //             video.srcObject = remoteList
+                        //         }
+                        //     }}
+                        //     autoPlay
+                        //     playsInline
+                        //     muted={true}
+                        // />
+
+                    }
+
+                    {
+                        isConnect &&  <iframe
+                             style={{ width: '100%', height: '800px' }}
+                             src={'https://meet.vumi.com.bd/doctor-2-patient-1'}
+                             allow="camera;microphone"
+                         />
                     }
                     <button onClick={() => callAccept()}
                         className="bg-blue-500 text-white text-2xl font-semibold pt-1 pr-2 pl-2 pb-1 mt-3 rounded hover:bg-blue-900">Call

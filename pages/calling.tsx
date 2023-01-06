@@ -21,8 +21,10 @@ const Calling: NextPage = ({authSession}: any) => {
         const localStream = await navigator.mediaDevices.getUserMedia({video: true, audio: true});
         await localStream.getTracks().forEach(track => peer.addTrack(track, localStream));
         await setLocalStream(localStream);
-        console.log(fromId, toId)
+        console.log('peer',peer.onicecandidate)
+
         peer.onicecandidate = (event: RTCPeerConnectionIceEvent) => {
+            console.log('event',event)
             if (event.candidate) {
                 // send our ice candidates to other peer
                 console.log('sending Ice',fromId, toId,)
@@ -41,25 +43,21 @@ const Calling: NextPage = ({authSession}: any) => {
 
         Object.keys(socket).length > 0 && socket.socket.on("webRTC-signaling", async (data: any) => {
             let webRtcSignal: IWebRTCSignaling = JSON.parse(data.toString());
+            console.log(webRtcSignal);
             if (webRtcSignal.type === webRTCSignaling.OFFER) {
                 console.log('Offer received',webRtcSignal);
-                peer.setRemoteDescription({
+                await peer.setRemoteDescription({
                     type: 'offer',
                     sdp: webRtcSignal.offer
-                }).then((r: void) => console.log('')).catch((e: any) => console.log(''));
-
+                });
 
                 const remoteStream = new MediaStream();
                 peer.ontrack = async (event: RTCTrackEvent) => {
                     await remoteStream.addTrack(event.track);
                     await setRemoteList(remoteStream);
                 };
-
                 const answer:any = await peer.createAnswer();
-                peer.setLocalDescription(answer);
-
-
-
+                await peer.setLocalDescription(answer);
                 socket.sendDataUsingWebRTCSignaling({
                     type: webRTCSignaling.ANSWER,
                     answer: answer.sdp,
@@ -92,12 +90,10 @@ const Calling: NextPage = ({authSession}: any) => {
     useEffect(()=>{
         socket.socket.on(socketListener.PRE_OFFER_ANSWER, (data: any) => {
             let offerData: any = JSON.parse(data);
-            console.log('accepted',offerData)
-
             if(offerData.preOfferAnswer === preOfferAnswer.CALL_ACCEPTED) {
-                console.log('accepted',offerData)
                 setIsConnect(true)
-                createPc('01717677540',offerData.fromId)
+                // https://meet.vumi.com.bd/
+                //createPc('01717677540',offerData.fromId)
             }
         })
         socket.sendPreOffer({
