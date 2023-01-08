@@ -14,13 +14,13 @@ const AccountComponent = () => {
           </div>
           <div className="py-4">
             <div className="">
-              <div className="grid grid-cols-4 gap-4">
+              <div className="grid grid-cols-2 gap-4">
                 <div className="flex">
                   <Image
                     className="rounded-lg"
                     src={"/assets/images/img-2.png"}
-                    width={68}
-                    height={68}
+                    width={175}
+                    height={175}
                     alt="profile"
                   />
                 </div>
@@ -28,8 +28,8 @@ const AccountComponent = () => {
                   <Image
                     className="rounded-lg"
                     src={"/assets/images/img-2.png"}
-                    width={68}
-                    height={68}
+                    width={175}
+                    height={175}
                     alt="profile"
                   />
                 </div>
@@ -37,62 +37,17 @@ const AccountComponent = () => {
                   <Image
                     className="rounded-lg"
                     src={"/assets/images/img-2.png"}
-                    width={68}
-                    height={68}
+                    width={175}
+                    height={175}
                     alt="profile"
                   />
-                </div>
+                </div> 
                 <div className="flex">
                   <Image
                     className="rounded-lg"
                     src={"/assets/images/img-2.png"}
-                    width={68}
-                    height={68}
-                    alt="profile"
-                  />
-                </div>
-                <div className="flex">
-                  <Image
-                    className="rounded-lg"
-                    src={"/assets/images/img-2.png"}
-                    width={68}
-                    height={68}
-                    alt="profile"
-                  />
-                </div>
-                <div className="flex">
-                  <Image
-                    className="rounded-lg"
-                    src={"/assets/images/img-2.png"}
-                    width={68}
-                    height={68}
-                    alt="profile"
-                  />
-                </div>
-                <div className="flex">
-                  <Image
-                    className="rounded-lg"
-                    src={"/assets/images/img-2.png"}
-                    width={68}
-                    height={68}
-                    alt="profile"
-                  />
-                </div>
-                <div className="flex">
-                  <Image
-                    className="rounded-lg"
-                    src={"/assets/images/img-2.png"}
-                    width={68}
-                    height={68}
-                    alt="profile"
-                  />
-                </div>
-                <div className="flex">
-                  <Image
-                    className="rounded-lg"
-                    src={"/assets/images/img-2.png"}
-                    width={68}
-                    height={68}
+                    width={175}
+                    height={175}
                     alt="profile"
                   />
                 </div>
@@ -100,8 +55,8 @@ const AccountComponent = () => {
                   <Image
                     className="rounded-lg"
                     src={"/assets/images/img-1.png"}
-                    width={68}
-                    height={68}
+                    width={175}
+                    height={175}
                     alt="profile"
                   />
                 </div>
