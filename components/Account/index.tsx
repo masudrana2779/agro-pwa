@@ -41,7 +41,7 @@ const AccountComponent = () => {
                     height={175}
                     alt="profile"
                   />
-                </div>
+                </div> 
                 <div className="flex">
                   <Image
                     className="rounded-lg"
