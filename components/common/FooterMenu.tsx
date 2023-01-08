@@ -8,7 +8,7 @@ const FooterMenuComponent = () => {
   return (
     <>
       <div className="sticky bottom-0 bg-custom_green-400 p-4 flex items-center justify-between">
-        <Link href={"/"} className="group">
+        <Link href={"/settings"} className="group">
           <div className="flex justify-center text-white opacity-60 group-hover:opacity-100 text-2xl mb-1">
             <BiSliderAlt />
           </div>
