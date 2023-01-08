@@ -16,7 +16,7 @@ const FooterMenuComponent = () => {
             Settings
           </div>
         </Link>
-        <Link href={"/"} className="group">
+        <Link href={"/favourite"} className="group">
           <div className="flex justify-center text-white opacity-60 group-hover:opacity-100 text-2xl mb-1">
             <MdFavoriteBorder />
           </div>
@@ -32,7 +32,7 @@ const FooterMenuComponent = () => {
             Home
           </div>
         </Link>
-        <Link href={"/"} className="group">
+        <Link href={"/profile"} className="group">
           <div className="flex justify-center text-white opacity-60 group-hover:opacity-100 text-2xl mb-1">
             <BiUser />
           </div>
@@ -40,7 +40,7 @@ const FooterMenuComponent = () => {
             Profile
           </div>
         </Link>
-        <Link href={"/"} className="group">
+        <Link href={"/account"} className="group">
           <div className="flex justify-center text-white opacity-60 group-hover:opacity-100 text-2xl mb-1">
             <GiWallet />
           </div>
