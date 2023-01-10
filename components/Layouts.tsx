@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { FC, ReactElement } from "react";
-import FooterMenuComponent from "./common/FooterMenu";
+import FooterMenuComponent from "./common/Footer/FooterMenu";
 
 type LayoutProps = {
   children?: ReactElement;

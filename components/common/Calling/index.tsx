@@ -38,15 +38,15 @@ const CallingComponent = () => {
               <p className="text-white text-base">02: 12</p> */}
               {/* after call Connected visiable */}
               <p className="text-white text-base">
-                <b>Jodu</b>
+                <b>Ahmed</b>
                 <span className="mx-2">is calling</span>
-                <b>Modhu</b>
+                <b>Shahriar Alam</b>
               </p>
             </div>
           </div>
         </div>
       </div>
-      <div className="absolute bottom-0 bg-custom_green-400 py-4 left-0 w-full flex items-center justify-center space-x-5">
+      <div className="fixed bottom-0 bg-custom_green-400 py-4 left-0 w-full flex items-center justify-center space-x-5">
         <div className="cursor-pointer w-10 h-10 rounded-full flex items-center justify-center bg-custom_green-500 text-white">
           <AiFillSound />
         </div>

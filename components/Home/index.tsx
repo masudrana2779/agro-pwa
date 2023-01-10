@@ -6,7 +6,7 @@ import QAComponent from "../QA";
 const HomeComponent = () => {
   return (
     <>
-      <div className="pb-3">
+      <div className="pb-28">
         <BannerComponent />
         <CallChat />
         <FarmingTipsComponent />
