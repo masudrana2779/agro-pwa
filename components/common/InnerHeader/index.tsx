@@ -22,12 +22,12 @@ const InnerHeaderComponent = () => {
           </div>
         </div>
         <div className="w-10 h-10 flex justify-center items-center">
-          <div className="text-white relative">
+          {/* <div className="text-white relative">
             <BsBellFill />
             <span className="absolute -top-1 -right-1 w-3 h-3 flex items-center justify-center text-white font-normal text-[8px] bg-custom_red-500 rounded-full">
               1
             </span>
-          </div>
+          </div> */}
         </div>
       </div>
     </>

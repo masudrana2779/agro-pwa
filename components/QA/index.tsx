@@ -35,7 +35,7 @@ const QAComponent = () => {
           <div className="flex justify-between mb-2">
             <div className={`text-lg text-green-700 font-medium`}>Q&A</div>
             <div className={`text-sm text-gray-800 font-normal`}>
-              <Link href={"/blog1"}>See all</Link>
+              <Link href={"/blog1?title=Q A"}>See all</Link>
             </div>
           </div>
         </div>

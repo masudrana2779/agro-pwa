@@ -9,7 +9,7 @@ const BlogPage = () => {
       <Layout title="Blog">
         <>
           <InnerHeaderComponent />
-          <InnerSliderComponent />
+          {/* <InnerSliderComponent /> */}
           <TabMenuComponent />
         </>
       </Layout>
