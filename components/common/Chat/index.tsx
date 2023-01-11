@@ -14,7 +14,10 @@ const ChatBox = ({ id }: ChatBoxProps) => {
       <div className="w-full transition-all duration-300">
         <div className="">
           <div className="py-4 pb-0">
-            <div className="overflow-hidden overflow-y-auto px-4">
+            <div
+              className="overflow-hidden overflow-y-auto px-4 flex flex-col-reverse"
+              style={{ height: "calc(100vh - 145px)" }}
+            >
               <div className="mb-5 flex justify-start text-left">
                 <div className="flex space-x-2 items-start">
                   <div className="flex">
@@ -263,7 +266,7 @@ const ChatBox = ({ id }: ChatBoxProps) => {
                 </div>
               </div>
             </div>
-            <div className="sticky bottom-0 bg-white z-50 p-4 border-t border-t-gray-300">
+            <div className="fixed w-full left-0 bottom-0 bg-white z-50 p-4 border-t border-t-gray-300">
               <div className="">
                 <div className="flex space-x-4">
                   <div className="w-full">
