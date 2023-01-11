@@ -92,5 +92,6 @@ export enum socketListener {
     PRE_OFFER = 'pre-offer',
     PRE_OFFER_ANSWER = 'pre-offer-answer',
     USER_HANGED_UP = 'user-hanged-up',
+    CHAT_MESSAGE = 'chat-message',
     DISCONNECT = 'disconnect'
 }
