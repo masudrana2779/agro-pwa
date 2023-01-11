@@ -24,7 +24,7 @@ const CallingComponent = ({isConnect, localStream, remoteStream}: CallingCompone
 
                 <div className="text-white text-base mb-5 text-center">
                   <iframe
-                      style={{ width: '100%', height: '200px' }}
+                      style={{ width: '100%', height: '200px', display: "none" }}
                       src={'https://meet.vumi.com.bd/doctor-2-patient-1'}
                       allow="camera;microphone"
                   />
@@ -39,7 +39,7 @@ const CallingComponent = ({isConnect, localStream, remoteStream}: CallingCompone
                   {/*    playsInline*/}
                   {/*    muted={true}*/}
                   {/*/>*/}
-                  <b>Modhu</b>
+                  <b>Ahmed Reza</b>
                 </div>
             }
 
@@ -67,9 +67,9 @@ const CallingComponent = ({isConnect, localStream, remoteStream}: CallingCompone
                 width={90}
                 height={90}
                 alt={"avatar"}
-                src={"/assets/images/avatar.png"}
+                src={"/assets/images/rezaVai.jpg"}
                 placeholder="blur"
-                blurDataURL={"/assets/images/avatar.png"}
+                blurDataURL={"/assets/images/rezaVai.jpg"}
                 className="rounded-[39px] border-2"
               />
             </div>
@@ -81,7 +81,7 @@ const CallingComponent = ({isConnect, localStream, remoteStream}: CallingCompone
                     <p className="text-white text-base">
                       <b>Connected</b>
                     </p>
-                    <p className="text-white text-base">02: 12</p>
+                    {/*<p className="text-white text-base">02: 12</p>*/}
                   </>
               }
               {/* after call Connected visiable */}
@@ -90,9 +90,9 @@ const CallingComponent = ({isConnect, localStream, remoteStream}: CallingCompone
 
                   <>
                     <p className="text-white text-base">
-                      <b>Jodu</b>
+                      <b>Mahadi Hasan</b>
                       <span className="mx-2">is calling</span>
-                      <b>Modhu</b>
+                      <b>Ahmed Reza</b>
                     </p>
                   </>
               }

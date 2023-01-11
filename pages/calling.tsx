@@ -92,17 +92,15 @@ const Calling: NextPage = ({authSession}: any) => {
             let offerData: any = JSON.parse(data);
             if(offerData.preOfferAnswer === preOfferAnswer.CALL_ACCEPTED) {
                 setIsConnect(true)
-                // https://meet.vumi.com.bd/
-                //createPc('01717677540',offerData.fromId)
             }
         })
         socket.sendPreOffer({
             toId: '01710575743',
             toName: 'Ahmed Reza',
-            toImage: 'kk',
+            toImage: '/assets/images/rezaVai.jpg',
             fromName: 'mahadi hasan',
             fromId: '01717677540',
-            fromImage: 'nnn',
+            fromImage: '/assets/images/mh.jpg',
             callType: CallType.VIDEO_PERSONAL_CODE
         })
     },[socket])

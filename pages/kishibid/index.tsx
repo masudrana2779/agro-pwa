@@ -9,9 +9,6 @@ const Dashboard: NextPage = ({authSession}: any) => {
     const [localStream, setLocalStream] = useState<any>(undefined);
     const [peerConnection, setPeerConnection] = useState<RTCPeerConnection>();
     const [remoteList, setRemoteList] = useState<any>('');
-    const [isAudioMute, setIsAudioMute] = useState<boolean>(false);
-    const [isVideoMute, setIsVideoMute] = useState<boolean>(false);
-    const [isSpeakerMute, setIsSpeakerMute] = useState<boolean>(false);
     const [isConnect, setIsConnect] = useState<boolean>(false);
     const [caller, setCaller] = useState<any>(null);
     const socket = SocketIO.getInstance();
@@ -81,7 +78,7 @@ const Dashboard: NextPage = ({authSession}: any) => {
         setPeerConnection(peer);
     }
     useEffect(()=>{
-        socket.socket.on(socketListener.PRE_OFFER, (data: any) => {
+        socket.socket.on(socketListener.PRE_OFFER, data => {
             setCaller(data)
         })
     }, [socket.socket])
