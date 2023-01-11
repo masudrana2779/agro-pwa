@@ -15,12 +15,14 @@ const users: User[] = [
         name: 'Mahadi Hasan',
         address: 'Dhaka',
         rule: 1,
+        profilePhoto: '/assets/images/mh.jpg'
     },
     {
         phoneNumber: '01710575743',
         name: 'Ahmed Reza',
         address: 'Dhaka',
         rule: 7,
+        profilePhoto: '/assets/images/rezaVai.jpg'
     }
 ]
 

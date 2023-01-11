@@ -6,6 +6,7 @@ import InnerHeaderComponent from "../InnerHeader";
 import {SocketIO} from "../../../designPattern/SocketIO";
 import {useCallback, useEffect, useRef, useState} from "react";
 import {socketListener} from "../../../enum";
+import moment from "moment";
 
 type ChatBoxProps = {
   id?: string;
@@ -22,7 +23,6 @@ const ChatBox = ({ authSession, messages, getMsg }: ChatBoxProps) => {
   useEffect(()=>{
     socket.socket.on(socketListener.CHAT_MESSAGE, data => {
       let offerData: any = JSON.parse(data);
-      console.log(offerData)
       localStorage.setItem('msg', JSON.stringify(messages.concat(offerData)));
        getMsg();
     })
@@ -34,12 +34,16 @@ const ChatBox = ({ authSession, messages, getMsg }: ChatBoxProps) => {
 
   const sendData = useCallback(async ()=>{
     let toId = authSession.phoneNumber === '01710575743' ? '01717677540':'01710575743';
+    let senderImageUrl = authSession.profilePhoto;
+    let receiverImageUrl = authSession.phoneNumber === '01710575743' ? '/assets/images/mh.jpg':'/assets/images/rezaVai.jpg';
     let fromId = authSession.phoneNumber;
     let body = inputData;
+    let createdDate = new Date();
+    let msg = {toId, fromId, body, senderImageUrl, receiverImageUrl, createdDate}
     await setInputData('')
-    await socket.socket.emit(socketListener.CHAT_MESSAGE, JSON.stringify({toId, fromId, body}));
+    await socket.socket.emit(socketListener.CHAT_MESSAGE, JSON.stringify(msg));
     await scrollToBottom();
-    await localStorage.setItem('msg', JSON.stringify(messages.concat({toId, fromId, body})));
+    await localStorage.setItem('msg', JSON.stringify(messages.concat(msg)));
     await getMsg();
   },[authSession.phoneNumber, inputData, messages, socket.socket, getMsg])
 
@@ -57,7 +61,7 @@ const ChatBox = ({ authSession, messages, getMsg }: ChatBoxProps) => {
                             <div className="flex w-10">
                               <Image
                                   className="rounded-full"
-                                  src={"/assets/images/profile.png"}
+                                  src={item.toId === authSession.phoneNumber ? item.senderImageUrl : authSession.profilePhoto}
                                   width={40}
                                   height={40}
                                   alt="profile"
@@ -71,7 +75,7 @@ const ChatBox = ({ authSession, messages, getMsg }: ChatBoxProps) => {
                                   className="absolute top-0 -left-[6px]  h-0 w-0 border-t-8 border-r-8 border-l-8 border-t-gray-300 border-r-gray-300 border-l-transparent"></div>
                             </div>
                             <div className="text-[12px] text-gray-400">
-                              Today, 2:01pm
+                              {moment(item.createdDate).startOf('day').fromNow()}
                             </div>
                           </div>
                         </div>

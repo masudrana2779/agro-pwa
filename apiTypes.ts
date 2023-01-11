@@ -91,4 +91,5 @@ export type User = {
   name: string,
   address: string,
   rule: UserType,
+  profilePhoto: string
 }

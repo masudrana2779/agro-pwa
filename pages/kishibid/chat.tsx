@@ -13,9 +13,7 @@ const Chat = ({authSession}: any) => {
         let msg = localStorage.getItem('msg');
         msg && setMessage(JSON.parse(msg.toString()))
     }
-
-    console.log(messages)
-  return (
+    return (
     <>
         <ChatBox authSession={authSession} messages={messages} getMsg={getMsg}/>
     </>
