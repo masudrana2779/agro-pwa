@@ -26,7 +26,7 @@ const ChatBox = ({ authSession, messages, getMsg }: ChatBoxProps) => {
       localStorage.setItem('msg', JSON.stringify(messages.concat(offerData)));
        getMsg();
     })
-  }, [messages, socket.socket])
+  }, [getMsg, messages, socket.socket])
 
   const scrollToBottom = () => {
     bottomRef?.current?.scrollIntoView({ behavior: "smooth" });
@@ -45,7 +45,7 @@ const ChatBox = ({ authSession, messages, getMsg }: ChatBoxProps) => {
     await scrollToBottom();
     await localStorage.setItem('msg', JSON.stringify(messages.concat(msg)));
     await getMsg();
-  },[authSession.phoneNumber, inputData, messages, socket.socket, getMsg])
+  },[authSession.phoneNumber, authSession.profilePhoto, inputData, socket.socket, messages, getMsg])
 
   return (
     <>
@@ -53,7 +53,8 @@ const ChatBox = ({ authSession, messages, getMsg }: ChatBoxProps) => {
       <div className="w-full transition-all duration-300">
         <div className="">
           <div className="py-4 pb-0">
-            <div className="overflow-hidden overflow-y-auto px-4">
+            <div className="overflow-hidden overflow-y-auto px-4 flex flex-col"
+              style={{ height: "calc(100vh - 145px)" }}>
               {messages.length > 0 && messages.map((item, i) => (
                       <div key={i} className={`mb-5 flex ${item.toId === authSession.phoneNumber ? 'justify-start text-left': 'justify-end text-right'}`}>
                         <div className="flex space-x-2 items-start">
@@ -78,6 +79,7 @@ const ChatBox = ({ authSession, messages, getMsg }: ChatBoxProps) => {
                               {moment(item.createdDate).startOf('day').fromNow()}
                             </div>
                           </div>
+
                         </div>
                       </div>
                   )
@@ -85,7 +87,7 @@ const ChatBox = ({ authSession, messages, getMsg }: ChatBoxProps) => {
               }
             </div>
 
-            <div className="sticky bottom-0 bg-white z-50 p-4 border-t border-t-gray-300">
+            <div className="fixed w-full left-0 bottom-0 bg-white z-50 p-4 border-t border-t-gray-300">
               <div className="">
                 <div className="flex space-x-4">
                   <div style={{ float:"left", clear: "both" }}

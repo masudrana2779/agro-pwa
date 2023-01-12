@@ -26,7 +26,7 @@ const CallingComponent = ({isConnect, localStream, remoteStream}: CallingCompone
                   <iframe
                       style={{ width: '100%', height: '200px', display: "none" }}
                       src={'https://meet.vumi.com.bd/doctor-2-patient-1'}
-                      allow="camera;microphone"
+                      allow="microphone"
                   />
                   {/*<video*/}
                   {/*    className="videoContainer"*/}
@@ -96,12 +96,11 @@ const CallingComponent = ({isConnect, localStream, remoteStream}: CallingCompone
                     </p>
                   </>
               }
-
             </div>
           </div>
         </div>
       </div>
-      <div className="absolute bottom-0 bg-custom_green-400 py-4 left-0 w-full flex items-center justify-center space-x-5">
+      <div className="fixed bottom-0 bg-custom_green-400 py-4 left-0 w-full flex items-center justify-center space-x-5">
         <div className="cursor-pointer w-10 h-10 rounded-full flex items-center justify-center bg-custom_green-500 text-white">
           <AiFillSound />
         </div>

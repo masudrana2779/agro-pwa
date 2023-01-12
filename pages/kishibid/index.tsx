@@ -135,7 +135,7 @@ const Dashboard: NextPage = ({authSession}: any) => {
                         isConnect &&  <iframe
                              style={{ width: '100%', height: '800px' }}
                              src={'https://meet.vumi.com.bd/doctor-2-patient-1'}
-                             allow="camera;microphone"
+                             allow="microphone"
                          />
                     }
                     <button onClick={() => callAccept()}
