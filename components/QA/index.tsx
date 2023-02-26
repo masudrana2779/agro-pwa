@@ -1,6 +1,5 @@
 import Link from "next/link";
 import QAItemComponent from "./QAItem";
-import {useGetCategoriesQuery} from "../../redux/reducer/category/query";
 
 const QAComponent = () => {
   const data = [
@@ -45,14 +44,13 @@ const QAComponent = () => {
             {data &&
               data.length > 0 &&
               data.map((item: any, i: number) => (
-                <div key={i}>
-                  <QAItemComponent
-                    imageUrl={item.imageUrl}
-                    url={`${item.url}?title=${item.title}`}
-                    title={item.title}
-                    bgGradient={item.bgGradient}
-                  />
-                </div>
+                <QAItemComponent
+                  imageUrl={item.imageUrl}
+                  url={`${item.url}?title=${item.title}`}
+                  title={item.title}
+                  bgGradient={item.bgGradient}
+                  key={i}
+                />
               ))}
           </div>
         </div>
