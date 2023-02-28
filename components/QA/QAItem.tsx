@@ -18,18 +18,18 @@ const QAItemComponent = ({
         href={url}
         className={`${bgGradient} p-4 rounded-2xl`}
       >
-        <div className="ml-auto w-28 h-28 mb-1 flex items-center justify-start">
+        <div className="ml-auto w-28 h-14 mb-1 flex items-center justify-end">
           <Image
             src={imageUrl}
-            width={110}
-            height={110}
+            width={80}
+            height={80}
             alt="fish"
             placeholder="blur"
             blurDataURL={imageUrl}
           />
         </div>
         <div className="">
-          <div className="text-lg text-white font-medium">{title}</div>
+          <div className="text-lg text-white font-medium capitalize">{title}</div>
         </div>
       </Link>
     </> 
