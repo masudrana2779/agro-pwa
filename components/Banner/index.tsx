@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Slider from "react-slick";
-import { SocketIO } from "../../designPattern/SocketIO";
 import { BannerWrap } from "./banner.styled";
 
 const BannerComponent = () => {
