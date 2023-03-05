@@ -2,7 +2,7 @@ import Image from "next/image";
 import Slider from "react-slick";
 import { BannerWrap } from "./banner.styled";
 
-const BannerComponent = () => {
+const BannerComponent = () => { 
   var settings = {
     dots: true,
     infinite: true,
