@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Slider from "react-slick";
+import { SocketIO } from "../../designPattern/SocketIO";
 import { BannerWrap } from "./banner.styled";
 
 const BannerComponent = () => {
@@ -32,17 +33,17 @@ const BannerComponent = () => {
             <div className={`text-lg text-green-700 font-medium`}>Krishi</div>
           </div> */}
           <Slider {...settings}>
-            {[1, 1, 1, 1].map((item, i: number) => (
-              <div key={i} className="">
-                <div className="flex">
+            {[1, 2, 3, 4, 5].map((item, i: number) => (
+              <div key={i} className="w-full">
+                <div className="flex w-full p-4">
                   <Image
-                    src={"/assets/images/banner-1.png"}
+                    src={`/assets/images/banner-${item}.png`}
                     width={343}
                     height={213}
                     alt="banner"
                     placeholder="blur"
-                    className="rounded-2xl"
-                    blurDataURL={`${"/assets/images/banner-1.png"}`}
+                    className="rounded-2xl shadow-sm w-full"
+                    blurDataURL={`${`/assets/images/banner-${item}.png`}`}
                   />
                 </div>
               </div>

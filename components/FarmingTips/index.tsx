@@ -30,7 +30,7 @@ const FarmingTipsComponent = () => {
         <div className="">
           <FarmingTipsWrap className="">
             <Slider {...settings}>
-              {[1, 2, 3, 1, 2, 3].map((item: any, i: number) => (
+              {[0,1,2,3,4,5].map((item: any, i: number) => (
                 <div key={i} className="">
                   <Link href={"/blog-details?title=Tips Details"}>
                     <div className="flex">

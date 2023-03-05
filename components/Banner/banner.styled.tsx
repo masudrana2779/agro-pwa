@@ -4,12 +4,12 @@ export const BannerWrap = styled.div`
   .slick-slide {
     transition: all 0.5s;
     &.slick-current {
-      transform: scale(1.1);
+      transform: scale(1.05);
     }
   }
 
   .slick-dots {
-    bottom: -10px;
+    bottom: -15px;
     li {
       width: 6px;
       height: 6px;
